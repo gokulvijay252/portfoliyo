@@ -10,7 +10,7 @@ import Confetti from '../ui/Confetti';
 const Hero: React.FC = () => {
   const { data: hero, loading, error } = useFetch(getHero);
   const { data: about } = useFetch(getAbout);
-  const { darkMode, theme } = useTheme();
+  const { theme } = useTheme();
 
   if (loading) return <Spinner />;
   if (error) return <p className="text-red-500 text-center py-20">{error}</p>;
@@ -23,9 +23,6 @@ const Hero: React.FC = () => {
     { top: '50%', left: '-14%', size: 16, delay: 2.4 },
   ];
 
-  const btnBg = darkMode ? '#ffffff' : '#1c2b3a';
-  const btnText = darkMode ? '#1c2b3a' : '#ffffff';
-  const btnShadow = darkMode ? 'rgba(255,255,255,0.25)' : 'rgba(28,43,58,0.25)';
 
   return (
     <section id="hero" className="relative min-h-screen" style={{ background: theme.bg }}>
