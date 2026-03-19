@@ -88,7 +88,7 @@ const Skills: React.FC = () => {
     <section
       id="skills"
       className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 overflow-hidden w-full"
-      style={{ paddingBottom: '11rem', background: theme.bg }}
+      style={{ background: theme.bg }}
     >
       <style>{orbitCSS}</style>
       <div className="max-w-5xl mx-auto w-full">

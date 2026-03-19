@@ -15,7 +15,7 @@ export const hero: Hero = {
 export const about: About = {
   id: 1,
   bio: 'I am a dedicated Software Developer with 4+ years of experience in full-stack development, specializing in React.js, Node.js, and MySQL. I have developed scalable and secure web applications and high-performance REST APIs, with strong expertise in writing clean, maintainable code and implementing security best practices. I work closely with cross-functional teams to deliver robust solutions that drive business growth.',
-  profile_image_url: null,
+  profile_image_url: '/photo.png',
 };
 
 export const skills: Skill[] = [
@@ -94,6 +94,14 @@ export const qualifications: Qualification[] = [
     organization: 'RVS College of Arts and Science, Coimbatore',
     start_year: 2018,
     end_year: 2021,
+    description: null,
+  },
+  {
+    id: 2,
+    title: 'MCA - Master of Computer Application',
+    organization: 'Sri Muthukumaran Institute of Technology, Chennai',
+    start_year: 2022,
+    end_year: 2024,
     description: null,
   },
 ];

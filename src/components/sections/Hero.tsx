@@ -31,11 +31,11 @@ const Hero: React.FC = () => {
     <section id="hero" className="relative min-h-screen" style={{ background: theme.bg }}>
       <Confetti />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-20">
-        <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-20">
-          <div className="flex-1 text-center lg:text-left">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-20">
+          <div className="flex-1 text-center lg:text-left max-w-2xl">
             <motion.h1
               className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-4 sm:mb-6"
-              style={{ color: theme.heading, fontFamily: "'Times New Roman', serif" }}
+              style={{ color: theme.heading, fontFamily: "sans-serif" }}
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
@@ -43,8 +43,8 @@ const Hero: React.FC = () => {
               {hero?.name || 'Vijay A'}
             </motion.h1>
             <motion.p
-              className="font-extrabold text-lg sm:text-xl leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0"
-              style={{ color: theme.text, fontFamily: "'Times New Roman', serif" }}
+              className="font-extrabold leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0"
+              style={{ fontSize: '25px', color: theme.text, fontFamily: "sans-serif" }}
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
@@ -52,8 +52,8 @@ const Hero: React.FC = () => {
               Software Developer / Fullstack Developer
             </motion.p>
             <motion.p
-              className="hidden sm:block font-bold leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0"
-              style={{ fontSize: '17px', color: theme.textSecondary, fontFamily: "'Times New Roman', serif" }}
+              className="hidden sm:block font-medium leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 text-left"
+              style={{ fontSize: '17px', color: theme.textSecondary, fontFamily: "sans-serif", textAlign: 'left' }}
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
@@ -88,7 +88,7 @@ const Hero: React.FC = () => {
           </div>
 
           <motion.div
-            className="flex-shrink-0 order-first lg:order-last"
+            className="flex-shrink-0 order-first lg:order-last flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.8, x: 60 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
@@ -117,6 +117,7 @@ const Hero: React.FC = () => {
                     src={about.profile_image_url}
                     alt={hero?.name || 'Vijay A'}
                     className="w-full h-full object-cover"
+                    style={{ objectPosition: 'center 20%' }}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-light-lighter/80">

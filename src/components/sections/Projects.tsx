@@ -115,7 +115,7 @@ const Projects: React.FC = () => {
     <section
       id="projects"
       className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 w-full"
-      style={{ paddingBottom: '13rem', background: theme.bg }}
+      style={{ background: theme.bg }}
     >
       <div className="max-w-5xl mx-auto w-full">
         <motion.div

@@ -26,6 +26,7 @@ const About: React.FC = () => {
               src={about.profile_image_url}
               alt="Profile"
               className="w-32 h-32 sm:w-48 sm:h-48 rounded-full object-cover ring-4 ring-light-border"
+              style={{ transform: 'scale(0.95)' }}
             />
           </motion.div>
         )}

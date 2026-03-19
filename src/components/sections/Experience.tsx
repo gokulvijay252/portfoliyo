@@ -38,8 +38,8 @@ const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="relative flex items-center justify-center min-h-screen px-4 sm:px-6 w-full"
-      style={{ paddingTop: '5rem', paddingBottom: '5rem', background: theme.bg }}
+      className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 w-full"
+      style={{ background: theme.bg }}
     >
       <div className="max-w-5xl mx-auto w-full">
         <motion.div
