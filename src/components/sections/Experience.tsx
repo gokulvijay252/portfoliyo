@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useFetch } from '../../hooks/useFetch';
 import { getExperience } from '../../services/experienceService';
 import Spinner from '../ui/Spinner';
-import { FaBriefcase, FaCalendarAlt, FaBuilding, FaChevronRight } from 'react-icons/fa';
+import { FaBriefcase, FaCalendarAlt, FaBuilding, FaStar } from 'react-icons/fa';
 import { useTheme } from '../../hooks/useTheme';
 
 const formatDate = (date: string | null): string => {
@@ -38,7 +38,7 @@ const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 w-full"
+      className="relative py-16 sm:py-20 md:py-24 px-6 sm:px-8 w-full"
       style={{ background: theme.bg }}
     >
       <div className="max-w-5xl mx-auto w-full">
@@ -58,7 +58,7 @@ const Experience: React.FC = () => {
         </motion.div>
 
         <motion.p
-          className="text-center font-bold max-w-2xl mx-auto mb-14 sm:mb-20 leading-relaxed"
+          className="text-center font-normal max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed"
           style={{ color: theme.textSecondary, fontSize: '17px' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ const Experience: React.FC = () => {
           My professional journey and work experience in building modern web applications.
         </motion.p>
 
-        <div className="max-w-4xl mx-auto flex flex-col gap-8">
+        <div className="max-w-4xl mx-auto flex flex-col gap-6">
           {experience.map((exp, index) => (
             <ExperienceCard key={exp.id} exp={exp} index={index} />
           ))}
@@ -102,7 +102,7 @@ const ExperienceCard: React.FC<{
       transition={{ duration: 0.5, delay: index * 0.15, ease: 'easeOut' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="rounded-2xl p-7 sm:p-10 transition-all duration-400"
+      className="rounded-2xl p-5 sm:p-7 transition-all duration-400"
       style={{
         background: isHovered ? theme.cardBgHover : theme.cardBg,
         boxShadow: isHovered ? '0 12px 40px rgba(0,0,0,0.15)' : '0 4px 12px rgba(0,0,0,0.08)',
@@ -111,7 +111,7 @@ const ExperienceCard: React.FC<{
         backdropFilter: 'blur(10px)',
       }}
     >
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
         <div className="flex items-center gap-3">
           <div
             className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -120,12 +120,12 @@ const ExperienceCard: React.FC<{
             <FaBriefcase style={{ color: theme.text }} className="text-lg sm:text-xl" />
           </div>
           <div>
-            <h3 className="font-extrabold" style={{ color: theme.text, fontSize: '22px' }}>
+            <h3 className="font-extrabold" style={{ color: theme.heading, fontSize: '20px' }}>
               {exp.role}
             </h3>
             <div className="flex items-center gap-2 mt-0.5">
               <FaBuilding size={13} style={{ color: theme.textSecondary }} />
-              <span className="font-extrabold" style={{ color: theme.textSecondary, fontSize: '15px' }}>
+              <span className="font-normal" style={{ color: theme.textSecondary, fontSize: '15px' }}>
                 {exp.company}
               </span>
             </div>
@@ -133,7 +133,7 @@ const ExperienceCard: React.FC<{
         </div>
         {isPresent && (
           <span
-            className="self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+            className="self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider"
             style={{ background: 'rgba(34,197,94,0.15)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.3)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -142,15 +142,15 @@ const ExperienceCard: React.FC<{
         )}
       </div>
 
-      <div className="flex flex-wrap items-center gap-4 mb-7">
+      <div className="flex flex-wrap items-center gap-4 mb-5">
         <div className="flex items-center gap-1.5">
           <FaCalendarAlt size={14} style={{ color: theme.textSecondary }} />
-          <span className="font-bold font-mono" style={{ color: theme.text, fontSize: '15px' }}>
+          <span className="font-normal font-mono" style={{ color: theme.text, fontSize: '15px' }}>
             {formatDate(exp.start_date)} — {formatDate(exp.end_date)}
           </span>
         </div>
         <span
-          className="inline-flex items-center px-3 py-1 rounded-full font-bold"
+          className="inline-flex items-center px-3 py-1 rounded-full font-normal"
           style={{
             background: darkMode ? 'rgba(255,255,255,0.15)' : 'rgba(28,43,58,0.08)',
             color: theme.text,
@@ -162,22 +162,22 @@ const ExperienceCard: React.FC<{
         </span>
       </div>
 
-      <div className="space-y-3.5">
+      <div className="space-y-2.5">
         {bullets.map((line, i) => (
           <motion.div
             key={i}
-            className="flex items-start gap-2.5"
+            className="flex items-start gap-2"
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.3 + i * 0.05 }}
           >
-            <FaChevronRight
-              size={12}
+            <FaStar
+              size={10}
               className="mt-1.5 flex-shrink-0"
-              style={{ color: theme.textSecondary }}
+              style={{ color: theme.heading }}
             />
-            <span className="font-bold leading-relaxed" style={{ color: theme.textSecondary, fontSize: '15px' }}>
+            <span className="font-normal leading-normal" style={{ color: theme.textSecondary, fontSize: '14px' }}>
               {line.replace(/^[-•]\s*/, '')}
             </span>
           </motion.div>

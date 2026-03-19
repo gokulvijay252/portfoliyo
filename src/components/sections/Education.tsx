@@ -36,7 +36,7 @@ const Education: React.FC = () => {
         </motion.div>
 
         <motion.p
-          className="text-center text-sm sm:text-base font-bold max-w-2xl mx-auto mb-10 sm:mb-14 leading-relaxed"
+          className="text-center text-sm sm:text-base font-normal max-w-2xl mx-auto mb-10 sm:mb-14 leading-relaxed"
           style={{ color: theme.textSecondary }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,16 +73,16 @@ const Education: React.FC = () => {
                     <FaGraduationCap className="text-lg sm:text-xl" style={{ color: theme.text }} />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="text-base sm:text-lg font-bold" style={{ color: theme.text }}>{edu.degree}</h3>
+                    <h3 className="text-base sm:text-lg font-bold" style={{ color: theme.heading }}>{edu.degree}</h3>
                     {edu.field && (
-                      <p className="text-sm font-bold" style={{ color: theme.textSecondary }}>{edu.field}</p>
+                      <p className="text-sm font-normal" style={{ color: theme.textSecondary }}>{edu.field}</p>
                     )}
-                    <p className="font-bold mt-1" style={{ color: theme.text }}>{edu.institution}</p>
-                    <p className="text-sm mt-1 font-bold font-mono" style={{ color: theme.textSecondary }}>
+                    <p className="font-normal mt-1" style={{ color: theme.text }}>{edu.institution}</p>
+                    <p className="text-sm mt-1 font-normal font-mono" style={{ color: theme.textSecondary }}>
                       {edu.start_year} - {edu.end_year || 'Present'}
                     </p>
                     {edu.description && (
-                      <p className="text-sm mt-2 font-bold" style={{ color: theme.textSecondary }}>{edu.description}</p>
+                      <p className="text-sm mt-2 font-normal" style={{ color: theme.textSecondary }}>{edu.description}</p>
                     )}
                   </div>
                 </div>

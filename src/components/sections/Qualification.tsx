@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useFetch } from '../../hooks/useFetch';
 import { getQualifications } from '../../services/qualificationService';
 import Spinner from '../ui/Spinner';
-import { FaCertificate, FaCalendarAlt, FaUniversity } from 'react-icons/fa';
+import { FaStar, FaCalendarAlt, FaUniversity } from 'react-icons/fa';
 import { useTheme } from '../../hooks/useTheme';
 
 const Qualification: React.FC = () => {
@@ -16,7 +16,7 @@ const Qualification: React.FC = () => {
   return (
     <section
       id="qualification"
-      className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 w-full"
+      className="relative py-16 sm:py-20 md:py-24 px-6 sm:px-8 w-full"
       style={{ background: theme.bg }}
     >
       <div className="max-w-5xl mx-auto w-full">
@@ -36,7 +36,7 @@ const Qualification: React.FC = () => {
         </motion.div>
 
         <motion.p
-          className="text-center font-bold max-w-2xl mx-auto mb-14 sm:mb-20 leading-relaxed"
+          className="text-center font-normal max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed"
           style={{ color: theme.textSecondary, fontSize: '17px' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ const Qualification: React.FC = () => {
           My academic qualifications and certifications.
         </motion.p>
 
-        <div className="max-w-4xl mx-auto flex flex-col gap-6">
+        <div className="mx-auto flex flex-col gap-6" style={{ maxWidth: '893px' }}>
           {qualifications.map((qual, i) => (
             <motion.div
               key={qual.id}
@@ -69,21 +69,21 @@ const Qualification: React.FC = () => {
                     className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0"
                     style={{ background: theme.iconBg }}
                   >
-                    <FaCertificate style={{ color: theme.heading }} className="text-xl sm:text-2xl" />
+                    <FaStar style={{ color: theme.heading }} className="text-xl sm:text-2xl" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-extrabold" style={{ color: theme.text }}>
+                    <h3 className="text-lg sm:text-xl font-extrabold" style={{ color: theme.heading }}>
                       {qual.title}
                     </h3>
                     <div className="flex items-center gap-2 mt-2">
                       <FaUniversity size={13} style={{ color: theme.textSecondary }} />
-                      <span className="font-bold" style={{ color: theme.textSecondary, fontSize: '15px' }}>
+                      <span className="font-normal" style={{ color: theme.textSecondary, fontSize: '15px' }}>
                         {qual.organization}
                       </span>
                     </div>
                     <div className="flex items-center gap-2 mt-2">
                       <FaCalendarAlt size={13} style={{ color: theme.textSecondary }} />
-                      <span className="font-bold font-mono" style={{ color: theme.textSecondary, fontSize: '14px' }}>
+                      <span className="font-normal font-mono" style={{ color: theme.textSecondary, fontSize: '14px' }}>
                         {qual.start_year} - {qual.end_year || 'Present'}
                       </span>
                     </div>

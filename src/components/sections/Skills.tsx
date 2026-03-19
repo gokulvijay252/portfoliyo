@@ -19,19 +19,19 @@ const OUTER = SKILLS.slice(5);
 
 const orbitCSS = `
 .skills-orbit {
-  --inner-r: 65px;
-  --outer-r: 150px;
+  --inner-r: 45px;
+  --outer-r: 105px;
 }
 @media (min-width: 640px) {
   .skills-orbit {
-    --inner-r: 95px;
-    --outer-r: 200px;
+    --inner-r: 65px;
+    --outer-r: 145px;
   }
 }
 @media (min-width: 768px) {
   .skills-orbit {
-    --inner-r: 120px;
-    --outer-r: 250px;
+    --inner-r: 80px;
+    --outer-r: 175px;
   }
 }
 @keyframes orbit-cw {
@@ -87,7 +87,7 @@ const Skills: React.FC = () => {
   return (
     <section
       id="skills"
-      className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 overflow-hidden w-full"
+      className="relative py-16 sm:py-20 md:py-24 px-6 sm:px-8 overflow-hidden w-full"
       style={{ background: theme.bg }}
     >
       <style>{orbitCSS}</style>
@@ -108,7 +108,7 @@ const Skills: React.FC = () => {
         </motion.div>
 
         <motion.p
-          className="text-center font-bold max-w-2xl mx-auto mb-14 sm:mb-20 leading-relaxed"
+          className="text-center font-normal max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed"
           style={{ color: theme.textSecondary, fontSize: '17px' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +120,7 @@ const Skills: React.FC = () => {
         </motion.p>
 
         <motion.div
-          className="skills-orbit relative mx-auto w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] md:w-[600px] md:h-[600px]"
+          className="skills-orbit relative mx-auto w-[260px] h-[260px] sm:w-[360px] sm:h-[360px] md:w-[430px] md:h-[430px]"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: '-50px' }}
@@ -150,11 +150,11 @@ const Skills: React.FC = () => {
 
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div
-              className="absolute rounded-full w-[130px] h-[130px] sm:w-[190px] sm:h-[190px] md:w-[240px] md:h-[240px]"
+              className="absolute rounded-full w-[90px] h-[90px] sm:w-[130px] sm:h-[130px] md:w-[160px] md:h-[160px]"
               style={{ border: `1px dashed ${dashColor}` }}
             />
             <div
-              className="absolute rounded-full w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px]"
+              className="absolute rounded-full w-[210px] h-[210px] sm:w-[290px] sm:h-[290px] md:w-[350px] md:h-[350px]"
               style={{ border: `1px dashed ${dashColor}` }}
             />
           </div>
@@ -170,13 +170,13 @@ const Skills: React.FC = () => {
               }}
             >
               <div
-                className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center"
+                className="w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center"
                 style={{ background: orbBg, boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}
               >
-                <img src={skill.image} alt={skill.name} className="w-7 h-7 sm:w-9 sm:h-9 object-contain" />
+                <img src={skill.image} alt={skill.name} className="w-5 h-5 sm:w-7 sm:h-7 object-contain" />
               </div>
               <span
-                className="block text-center mt-1 text-[8px] sm:text-[10px] font-bold tracking-wide whitespace-nowrap"
+                className="block text-center mt-1 text-[6px] sm:text-[8px] font-normal tracking-wide whitespace-nowrap"
                 style={{ color: theme.text }}
               >
                 {skill.name}
@@ -195,13 +195,13 @@ const Skills: React.FC = () => {
               }}
             >
               <div
-                className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center"
+                className="w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center"
                 style={{ background: orbBg, boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}
               >
-                <img src={skill.image} alt={skill.name} className="w-7 h-7 sm:w-9 sm:h-9 object-contain" />
+                <img src={skill.image} alt={skill.name} className="w-5 h-5 sm:w-7 sm:h-7 object-contain" />
               </div>
               <span
-                className="block text-center mt-1 text-[8px] sm:text-[10px] font-bold tracking-wide whitespace-nowrap"
+                className="block text-center mt-1 text-[6px] sm:text-[8px] font-normal tracking-wide whitespace-nowrap"
                 style={{ color: theme.text }}
               >
                 {skill.name}

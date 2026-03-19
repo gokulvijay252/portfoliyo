@@ -24,7 +24,7 @@ const ProjectCard: React.FC<{
 
   return (
     <motion.div
-      className="w-full sm:w-[calc(50%-0.75rem)]"
+      className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(50%-1.5rem)]"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
@@ -47,19 +47,19 @@ const ProjectCard: React.FC<{
             <img
               src={project.image_url}
               alt={project.title}
-              className="w-full h-40 sm:h-48 object-cover transition-transform duration-500"
+              className="w-full h-48 sm:h-56 object-cover transition-transform duration-500"
               style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
             />
           </div>
         )}
-        <div className="p-3 sm:p-4 flex-1 flex flex-col">
+        <div className="p-4 sm:p-6 flex-1 flex flex-col">
           <h3
-            className="text-base sm:text-lg font-extrabold mb-1 transition-colors duration-300"
-            style={{ color: theme.text }}
+            className="text-lg sm:text-xl font-semibold mb-2 transition-colors duration-300"
+            style={{ color: theme.heading }}
           >
             {project.title}
           </h3>
-          <p className="text-xs sm:text-sm font-extrabold flex-1 mb-2 line-clamp-3" style={{ color: theme.textSecondary }}>
+          <p className="font-normal flex-1 mb-3 line-clamp-3 leading-relaxed" style={{ color: theme.textSecondary, fontSize: '15px' }}>
             {project.description}
           </p>
           <div className="flex items-center justify-between mt-auto">
@@ -70,7 +70,7 @@ const ProjectCard: React.FC<{
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="flex items-center gap-1 text-sm font-extrabold transition-opacity duration-300 hover:opacity-70"
+                  className="flex items-center gap-1 text-sm font-medium transition-opacity duration-300 hover:opacity-70"
                   style={{ color: theme.text }}
                 >
                   <FaExternalLinkAlt size={12} /> Live
@@ -82,7 +82,7 @@ const ProjectCard: React.FC<{
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="flex items-center gap-1 text-sm font-extrabold transition-opacity duration-300 hover:opacity-70"
+                  className="flex items-center gap-1 text-sm font-medium transition-opacity duration-300 hover:opacity-70"
                   style={{ color: theme.text }}
                 >
                   <FaGithub size={14} /> Source
@@ -91,8 +91,8 @@ const ProjectCard: React.FC<{
             </div>
             <Link
               to={`/project/${project.id}`}
-              className="flex items-center gap-1 text-sm font-extrabold transition-opacity duration-300 hover:opacity-70"
-              style={{ color: theme.text }}
+              className="flex items-center gap-1 text-sm font-medium transition-opacity duration-300 hover:opacity-70"
+              style={{ color: theme.heading }}
             >
               Details <FaArrowRight size={10} />
             </Link>
@@ -114,10 +114,10 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 w-full"
+      className="relative py-16 sm:py-20 md:py-24 px-6 sm:px-8 w-full"
       style={{ background: theme.bg }}
     >
-      <div className="max-w-5xl mx-auto w-full">
+      <div className="max-w-6xl mx-auto w-full">
         <motion.div
           className="text-center mb-6"
           initial={{ opacity: 0, y: 30 }}
@@ -134,7 +134,7 @@ const Projects: React.FC = () => {
         </motion.div>
 
         <motion.p
-          className="text-center font-bold max-w-2xl mx-auto mb-14 sm:mb-20 leading-relaxed"
+          className="text-center font-normal max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed"
           style={{ color: theme.textSecondary, fontSize: '17px' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -145,7 +145,7 @@ const Projects: React.FC = () => {
           in building modern web applications.
         </motion.p>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-8">
           {projects.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}

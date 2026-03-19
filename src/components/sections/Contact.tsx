@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 w-full"
+      className="relative py-16 sm:py-20 md:py-24 px-6 sm:px-8 w-full"
       style={{ background: theme.bg }}
     >
       <div className="max-w-5xl mx-auto w-full">
@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
         </motion.div>
 
         <motion.p
-          className="text-center font-bold max-w-2xl mx-auto mb-14 sm:mb-20 leading-relaxed"
+          className="text-center font-normal max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed"
           style={{ color: theme.textSecondary, fontSize: '17px' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,10 +100,10 @@ const Contact: React.FC = () => {
                 <FaCheckCircle className="text-3xl" style={{ color: '#22c55e' }} />
               </div>
               <h3 className="text-xl font-bold mb-2" style={{ color: theme.text }}>Message Sent!</h3>
-              <p className="mb-6 text-sm font-bold" style={{ color: theme.textSecondary }}>Thank you for reaching out. I'll get back to you soon.</p>
+              <p className="mb-6 text-sm font-normal" style={{ color: theme.textSecondary }}>Thank you for reaching out. I'll get back to you soon.</p>
               <button
                 onClick={() => setStatus('idle')}
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm transition-all"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-medium text-sm transition-all"
                 style={{ background: btnBg, color: theme.text, border: btnBorder }}
               >
                 <FaEnvelope size={12} /> Send Another
@@ -132,7 +132,7 @@ const Contact: React.FC = () => {
               />
 
               <div className="mb-5">
-                <label className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: theme.text }}>
+                <label className="flex items-center gap-2 text-sm font-medium mb-2" style={{ color: theme.heading }}>
                   <FaUser size={12} style={{ color: theme.text }} /> Name
                 </label>
                 <input
@@ -157,7 +157,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="mb-5">
-                <label className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: theme.text }}>
+                <label className="flex items-center gap-2 text-sm font-medium mb-2" style={{ color: theme.heading }}>
                   <FaAt size={12} style={{ color: theme.text }} /> Email
                 </label>
                 <input
@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="mb-6">
-                <label className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: theme.text }}>
+                <label className="flex items-center gap-2 text-sm font-medium mb-2" style={{ color: theme.heading }}>
                   <FaCommentDots size={12} style={{ color: theme.text }} /> Message
                 </label>
                 <textarea
@@ -214,8 +214,8 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all duration-300 disabled:opacity-50"
-                style={{ background: btnBg, color: theme.text, border: btnBorder }}
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-medium text-sm transition-all duration-300 disabled:opacity-50"
+                style={{ background: theme.heading, color: '#1c2b3a', border: 'none' }}
               >
                 <FaPaperPlane size={12} />
                 {status === 'sending' ? 'Sending...' : 'Send Message'}

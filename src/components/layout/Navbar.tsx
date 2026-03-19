@@ -167,21 +167,7 @@ const Navbar: React.FC = () => {
               className="fixed top-0 left-0 h-full w-[70%] max-w-[300px] z-50 md:hidden flex flex-col"
               style={{ background: mobileBg }}
             >
-              {/* Close button */}
-              <div className="flex justify-start p-4">
-                <button
-                  onClick={() => setMobileOpen(false)}
-                  className="p-2"
-                  aria-label="Close menu"
-                >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={textColor} strokeWidth="2">
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </button>
-              </div>
-
-              <ul className="flex flex-col py-2">
+              <ul className="flex flex-col py-6">
                 {NAV_ITEMS.map((item, i) => {
                   const sectionId = item.href.replace('#', '');
                   const isActive = activeSection === sectionId;

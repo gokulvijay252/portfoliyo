@@ -37,7 +37,7 @@ const About: React.FC = () => {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
         >
-          <p className="text-white font-bold text-base sm:text-lg leading-relaxed whitespace-pre-line text-center md:text-left">
+          <p className="text-white font-normal text-base sm:text-lg leading-relaxed whitespace-pre-line text-center md:text-left">
             {about.bio}
           </p>
         </motion.div>
